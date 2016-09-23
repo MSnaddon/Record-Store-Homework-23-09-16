@@ -29,7 +29,12 @@ describe("Record store", function(){
 
   it("can add stock to inventory", function(){
     recordStore.addStock([record1, record2, record3]);
-    assert.equal(3, recordStore.stock);
+    assert.equal(3, recordStore.stock.length);
+  })
+
+  it("can return a list the stock", function(){
+    recordStore.addStock([record1, record2, record3]);
+    assert.equal(recordStore.listStock().length, 3)
   })
 
 })
