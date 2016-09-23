@@ -31,6 +31,9 @@ RecordStore.prototype = {
       output += item.price
     })
     return output
+  },
+  valueBusiness: function(){
+    return this.valueStock() + this.cash
   }
 }
 

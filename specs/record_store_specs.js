@@ -59,4 +59,8 @@ describe("Record store functions", function(){
     assert.equal(29.97, recordStore.valueStock());
   })
 
+  it("can eveuate business total", function(){
+    assert.equal(1529.97, recordStore.valueBusiness());
+  })
+
 })
