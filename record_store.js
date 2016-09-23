@@ -44,8 +44,10 @@ RecordStore.prototype = {
     if (stockValue <= this.cash){
       this.cash -= stockValue;
       this.addStock(stockArray);
+      return stockValue
     } else {
       console.log("Insufficient Funds");
+      return 0
     }
   }
 }

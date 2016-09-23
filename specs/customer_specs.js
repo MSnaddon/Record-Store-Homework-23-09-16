@@ -30,7 +30,10 @@ describe("Customer", function(){
   })
 
   it("should be able to sell records", function(){
-    var sellingRecord;
+    var sellingRecord = (new Record("Billy Cotton", "I've got a lovely bunch of coconuts", 9.99));
+    customer.hoard = [sellingRecord]
+    customer.sellRecord(sellingRecord, recordStore);
+    assert.equal(customer.cash, 10)
   })
 
 })

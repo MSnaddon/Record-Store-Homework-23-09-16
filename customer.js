@@ -12,8 +12,9 @@ Customer.prototype = {
       this.hoard.push(record);
     }
   },
-  sellRecord(record){
-    
+  sellRecord(record, store){
+    var recordToBeSold = this.hoard.splice(this.hoard.indexOf(record),1)
+    this.cash += store.buyStock(recordToBeSold, 50)
   }
 }
 
