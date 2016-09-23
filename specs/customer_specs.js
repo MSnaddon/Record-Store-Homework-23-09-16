@@ -26,7 +26,7 @@ describe("Customer", function(){
   it("should be able to buy stock", function(){
     var buyingRecord = recordStore.stock[0]
     customer.buyRecord(buyingRecord, recordStore);
-    assert.equal(customer.inventory.length, 1);
+    assert.equal(customer.hoard.length, 1);
   })
 
 })
