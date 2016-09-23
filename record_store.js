@@ -13,7 +13,7 @@ RecordStore.prototype = {
   },
   listStock: function(){
     return _.map(this.stock, function(item){
-      return("Artist : "+ item.artist + "Title : '" + item.title + "' Price : " + item.price)
+      return("Artist : "+ item.artist + "Title : '" + item.title + "' Price : " + item.price);
     })
   },
   findRecordByName: function(name){
@@ -28,12 +28,25 @@ RecordStore.prototype = {
   valueStock: function(){
     var output = 0
     _.forEach(this.stock, function(item){
-      output += item.price
+      output += item.price;
     })
     return output
   },
   valueBusiness: function(){
-    return this.valueStock() + this.cash
+    return this.valueStock() + this.cash;
+  },
+  buyStock: function(stockArray, discountInPercent){
+    var stockValue = _.sumBy(stockArray, function(item){
+      return item.price;
+    })
+    // evaluated the cost to the store
+    stockValue = Math.round(stockValue*discountInPercent)/100;
+    if (stockValue <= this.cash){
+      this.cash -= stockValue;
+      this.addStock(stockArray);
+    } else {
+      console.log("Insufficient Funds");
+    }
   }
 }
 

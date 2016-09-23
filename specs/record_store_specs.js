@@ -63,4 +63,10 @@ describe("Record store functions", function(){
     assert.equal(1529.97, recordStore.valueBusiness());
   })
 
+  it("should buy stock", function(){
+    recordStore.buyStock([record3], 70)
+    assert.equal(recordStore.stock.length, 4)
+    assert.equal(recordStore.cash, 1493.01)
+  })
+
 })

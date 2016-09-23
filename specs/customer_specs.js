@@ -29,4 +29,8 @@ describe("Customer", function(){
     assert.equal(customer.hoard.length, 1);
   })
 
+  it("should be able to sell records", function(){
+    var sellingRecord;
+  })
+
 })

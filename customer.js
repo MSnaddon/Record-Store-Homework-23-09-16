@@ -11,6 +11,9 @@ Customer.prototype = {
       store.sellStock(record);
       this.hoard.push(record);
     }
+  },
+  sellRecord(record){
+    
   }
 }
 
