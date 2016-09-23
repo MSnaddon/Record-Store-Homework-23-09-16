@@ -52,7 +52,8 @@ describe("Record functions", function(){
 
   it("can sell a record", function(){
     recordStore.sellStock(record2);
-    assert.equal()
+    assert.equal(recordStore.stock.length,2)
+    
   })
 
 })

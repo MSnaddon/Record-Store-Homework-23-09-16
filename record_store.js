@@ -18,11 +18,15 @@ RecordStore.prototype = {
   },
   findRecordByName: function(name){
     return _.find(this.stock, function(item){
-      item.name === name;
+      return item.title === name;
     })
   },
-  sellRecord: function(record){
-
+  sellStock: function(item){
+    var sale = this.stock.splice(this.stock.indexOf(item), 1);
+    this.cash += sale.price;
+  },
+  valueOfStock: function(){
+    
   }
 }
 
