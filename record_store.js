@@ -25,8 +25,12 @@ RecordStore.prototype = {
     var sale = this.stock.splice(this.stock.indexOf(item), 1);
     this.cash += sale.price;
   },
-  valueOfStock: function(){
-    
+  valueStock: function(){
+    var output = 0
+    _.forEach(this.stock, function(item){
+      output += item.price
+    })
+    return output
   }
 }
 

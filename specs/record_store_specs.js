@@ -28,7 +28,7 @@ describe("Record store", function(){
   })
 })
 
-describe("Record functions", function(){
+describe("Record store functions", function(){
 
   beforeEach(function(){
     record1 = new Record("Paul", "The underwear and the undertear", 5.99)
@@ -53,7 +53,10 @@ describe("Record functions", function(){
   it("can sell a record", function(){
     recordStore.sellStock(record2);
     assert.equal(recordStore.stock.length,2)
-    
+  })
+
+  it("can evaluate stock total", function(){
+    assert.equal(29.97, recordStore.valueStock());
   })
 
 })
