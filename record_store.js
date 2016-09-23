@@ -13,10 +13,17 @@ RecordStore.prototype = {
   },
   listStock: function(){
     return _.map(this.stock, function(item){
-      return("Record name : " + item.title + " | Artist : "+ item.artist + " | Price : " + item.price)
+      return("Artist : "+ item.artist + "Title : '" + item.title + "' Price : " + item.price)
     })
   },
+  findRecordByName: function(name){
+    return _.find(this.stock, function(item){
+      item.name === name;
+    })
+  },
+  sellRecord: function(record){
 
+  }
 }
 
 module.exports = RecordStore;
